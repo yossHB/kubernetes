@@ -3,7 +3,6 @@
 Get started with Docker Compose
 
 ---
-
 ## Contents
 
 1. [Overview](#Overview)
