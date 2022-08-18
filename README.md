@@ -1,6 +1,10 @@
-# Everything about Docker
+# Everything about Kubernetes
+
 Get started with Docker Compose
 
+---
+
+## Contents
 
 1. [Overview](#Overview)
    * [Definition](#Definition)
@@ -81,11 +85,6 @@ Replication Controller. An abstract used to manage pod lifecycles.
 
 
 
-
-
-> **Note**  
->
->  If you want to access a course, I suggest this website [Docker-tutorial]
 
 
 
