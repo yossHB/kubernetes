@@ -15,7 +15,7 @@ Get started with Docker Compose
 1. [Benefits of Kubernetes](#Benefits-of-Kubernetes)
 1. [Imperative Management of Kubernetes Objects](#Imperative-Management-of-Kubernetes-Objects)
 1. [Kubernetes API Reference](#Kubernetes-API-Reference)
-1. [Translate-a-Docker-Compose-File-to Kubernetes Resources](#Translate-a-Docker-Compose-File-to-Kubernetes-Resources)
+1. [Translate a Docker Compose File to Kubernetes Resources](#Translate-a-Docker-Compose-File-to-Kubernetes-Resources)
 1. [Going further](#Going-further)
    * [Docker - Kubernetes Architecture](#Docker-Kubernetes-Architecture)
 
