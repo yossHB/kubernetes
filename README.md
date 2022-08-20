@@ -7,12 +7,18 @@ Get started with Docker Compose
 
 1. [Overview](#Overview)
    * [Definition](#Definition)
+   * [Container](#Container)
+   * [Microservice](#Microservice)
+   * [Why do You Need Kubernetes](#Why-do-You-Need-Kubernetes)
 1. [Kubernetes diagram](#Kubernetes-diagram)
 1. [Vocabulaire](#Vocabulaire)
 1. [Benefits of Kubernetes](#Benefits-of-Kubernetes)
+1. [Imperative Management of Kubernetes Objects](#Imperative-Management-of-Kubernetes-Objects)
+1. [Kubernetes API Reference](#Kubernetes-API-Reference)
+1. [Translate-a-Docker-Compose-File-to Kubernetes Resources](#Translate-a-Docker-Compose-File-to-Kubernetes-Resources)
 1. [Going further](#Going-further)
    * [Docker - Kubernetes Architecture](#Docker-Kubernetes-Architecture)
-   
+
 
 
 
@@ -20,14 +26,24 @@ Get started with Docker Compose
 ### Definition
  Kubernetes, also referred to as K8s, is an open source platform used to manage Linux Containers across private, public and hybrid cloud environments. Businesses also can use Kubernetes to manage microservice architectures. Containers and Kubernetes are deployable on most cloud providers.
 
+### Microservice
+ A microservice architecture a variant of the SOA structural style – arranges an application as a collection of loosely-coupled services. In a microservices architecture, services are fine-grained and the protocols are lightweight. The goal is that teams can bring their services to life independent of others.
+
+### Container
+A container is a small, lightweight virtual machine (VM) that does not have device drivers and shares its operating system among the applications. It is a good way to bundle and run applications in a production environment. However, you need to manage these containers in a proper way so that there is no downtime.
+
+### Why do You Need Kubernetes
+ Containers decompose applications into smaller parts and enable faster development by assigning smaller, more focused teams responsible for specific containers. However, it requires a proper system for integrating and orchestrating each of these smaller decomposed parts. Kubernetes makes this possible by introducing Pods, or a collection of containers.
+
+
 
 ## Kubernetes diagram
  The following diagram shows in a simplistic format how Kubernetes works from an architecture point of view [kubernetes infrastructure][Kubernetes-infrastructure].
 
 * Services
-    * Pr  oxy
-        * minion  
-            * POD 
+    * Proxy
+        * minion
+            * POD
                 * Container
                 * Container
             * POD
@@ -79,15 +95,42 @@ Replication Controller. An abstract used to manage pod lifecycles.
  *   Annotation. A label with a much larger data capacity.
  *   Ingress. An application program interface (API) object that controls external access to services in a cluster -- usually HTTP. It offers name-based virtual hosting, load balancing and Secure Sockets Layer. Once you get a grasp on some basic Kubernetes concepts, stay sharp and test your knowledge of Kubernetes terms and meanings.
 
-## What is a Kubernetes cluster
+## Imperative Management of Kubernetes Objects
+ Kubernetes objects can be created, updated, and deleted by using the kubectl command-line tool along with an object configuration file written in YAML or JSON. This [document][KOUCF] explains how to define and manage objects using configuration files.
 
+## Kubernetes API Reference
+ In this [document][API] contains the most basic commands for getting a workload running on your cluster.
 
+## Translate a Docker Compose File to Kubernetes Resources
+ To convert a Docker Compose to container orchestrators such as Kubernetes or OpenShift we use tool called [Komposse][kompose]
 
+### Install Kompose
+ We have multiple ways to [install Kompose][ik].
+### Use Kompose
+1. To convert the docker-compose.yml file to files that you can use with kubectl, run kompose convert and then kubectl apply -f <output file>.
+```
+$ kompose convert -f docker-compose.yaml
+
+$ kubectl apply -f .
+```
+1. To see all displays a list of all pods in the current namespace, along with other information.
+```
+$ kubectl get po
+```
 
 
 
 
 ## Going further
+## For more resources
 * [Kubernetes | techtarget](https://www.techtarget.com/searchitoperations/definition/Google-Kubernetes)
+* [Kubernetes | simplilearn](https://www.simplilearn.com/tutorials/kubernetes-tutorial/what-is-kubernetes)
 
+
+
+
+[KOUCF]:https://kubernetes.io/docs/tasks/manage-kubernetes-objects/imperative-config/#:~:text=Using%20Configuration%20Files-,Imperative%20Management%20of%20Kubernetes%20Objects%20Using%20Configuration%20Files,manage%20objects%20using%20configuration%20files.
+[API]:https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.24/#-strong-api-overview-strong-
+[kompose]:https://kompose.io/
+[ik]:https://kompose.io/installation/
 
