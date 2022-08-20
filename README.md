@@ -115,7 +115,7 @@ $ kompose convert -f docker-compose.yaml
 
 $ kubectl apply -f .
 ```
-1. To see all displays a list of all pods in the current namespace, along with other information.
+2. To see all displays a list of all pods in the current namespace, along with other information.
 ```
 $ kubectl get po
 ```
