@@ -16,8 +16,10 @@ Get started with Docker Compose
 1. [Imperative Management of Kubernetes Objects](#Imperative-Management-of-Kubernetes-Objects)
 1. [Kubernetes API Reference](#Kubernetes-API-Reference)
 1. [Translate a Docker Compose File to Kubernetes Resources](#Translate-a-Docker-Compose-File-to-Kubernetes-Resources)
+1. [For courses](#For-courses)
+
 1. [Going further](#Going-further)
-   * [Docker - Kubernetes Architecture](#Docker-Kubernetes-Architecture)
+   * [Docker Kubernetes Architecture](#Docker-Kubernetes-Architecture)
 
 
 
@@ -121,11 +123,12 @@ $ kubectl get po
 
 
 
-## Going further
-## For more resources
+## For courses
 * [Kubernetes | techtarget](https://www.techtarget.com/searchitoperations/definition/Google-Kubernetes)
 * [Kubernetes | simplilearn](https://www.simplilearn.com/tutorials/kubernetes-tutorial/what-is-kubernetes)
 
+
+## Going further
 
 
 
