@@ -58,6 +58,8 @@ Get started with Kubernetes
  * kube-proxy − This is used to provide network proxy services to the outside world.
 
 ## Namespace
+In Kubernetes, namespaces provides a mechanism for isolating groups of resources within a single cluster. Names of resources need to be unique within a namespace, but not across namespaces. Namespace-based scoping is applicable only for namespaced objects (e.g. Deployments, Services, etc) and not for cluster-wide objects (e.g. StorageClass, Nodes, PersistentVolumes, etc).
+
 
 ## Benefits of Kubernetes
  Kubernetes enables users to schedule, run and monitor containers, typically in clustered configurations, and automate related operational tasks. These include:
