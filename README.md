@@ -1,6 +1,6 @@
 # Everything about Kubernetes
 
-Get started with Docker Compose
+Get started with Kubernetes
 
 ---
 ## Contents
@@ -9,11 +9,11 @@ Get started with Docker Compose
    * [Definition](#Definition)
 1. [Kubernetes diagram](#Kubernetes-diagram)
 1. [Vocabulaire](#Vocabulaire)
+1. [Namespace](#Namespace)
 1. [Benefits of Kubernetes](#Benefits-of-Kubernetes)
+1. [Deploy Kubernetes Dashboard](#Deploy-Kubernetes-Dashboard)
 1. [Going further](#Going-further)
    * [Docker - Kubernetes Architecture](#Docker-Kubernetes-Architecture)
-   
-
 
 
 ## Overview
@@ -57,6 +57,8 @@ Get started with Docker Compose
 
  * kube-proxy − This is used to provide network proxy services to the outside world.
 
+## Namespace
+
 ## Benefits of Kubernetes
  Kubernetes enables users to schedule, run and monitor containers, typically in clustered configurations, and automate related operational tasks. These include:
 
@@ -79,15 +81,19 @@ Replication Controller. An abstract used to manage pod lifecycles.
  *   Annotation. A label with a much larger data capacity.
  *   Ingress. An application program interface (API) object that controls external access to services in a cluster -- usually HTTP. It offers name-based virtual hosting, load balancing and Secure Sockets Layer. Once you get a grasp on some basic Kubernetes concepts, stay sharp and test your knowledge of Kubernetes terms and meanings.
 
-## What is a Kubernetes cluster
+## Deploy Kubernetes Dashboard
+Kubernetes Dashboard is a general purpose, web-based UI for Kubernetes clusters. It allows users to manage applications running in the cluster and troubleshoot them, as well as manage the cluster itself.
 
-
-
-
-
-
+```
+$ minikube dashboard
+```
+> **IMPORTANT**  
+> Read the [Access Control][AC] guide before performing any further steps. The default Dashboard deployment contains a minimal set of RBAC privileges needed to run.
 
 ## Going further
 * [Kubernetes | techtarget](https://www.techtarget.com/searchitoperations/definition/Google-Kubernetes)
+* [Kubernetes | youtube](https://www.youtube.com/watch?v=X48VuDVv0do)
+* [Running ELK on Kubernetes with Helm](https://coralogix.com/blog/elasticsearch-logstash-kibana-on-kubernetes/)
 
 
+[AC]:https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/README.md
