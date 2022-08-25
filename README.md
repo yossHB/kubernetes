@@ -25,7 +25,7 @@ Get started with Kubernetes
  The following diagram shows in a simplistic format how Kubernetes works from an architecture point of view [kubernetes infrastructure][Kubernetes-infrastructure].
 
 * Services
-    * Pr  oxy
+    * Proxy
         * minion  
             * POD 
                 * Container
