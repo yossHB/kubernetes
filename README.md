@@ -1,6 +1,6 @@
 # Everything about Kubernetes
 
-Get started with Docker Compose
+Get started with Kubernetes
 
 ---
 ## Contents
@@ -14,16 +14,19 @@ Get started with Docker Compose
 1. [Pod](#Pod)
     * [Single container pod](#Single-container-pod)
     * [Multi container pod](#Multi-container-pod)
+1. [minion](#minion)
 1. [Vocabulaire](#Vocabulaire)
+1. [Namespace](#Namespace)
 1. [Benefits of Kubernetes](#Benefits-of-Kubernetes)
+1. [Common Kubernetes terms](#Common-Kubernetes-terms)
 1. [Imperative Management of Kubernetes Objects](#Imperative-Management-of-Kubernetes-Objects)
 1. [Kubernetes API Reference](#Kubernetes-API-Reference)
 1. [Translate a Docker Compose File to Kubernetes Resources](#Translate-a-Docker-Compose-File-to-Kubernetes-Resources)
+1. [Deploy Kubernetes Dashboard](#Deploy-Kubernetes-Dashboard)
 1. [Courses](#Courses)
 1. [Going further](#Going-further)
     * [Docker Kubernetes Architecture](#Docker-Kubernetes-Architecture)
     * [Helm](#Helm)
-
 
 
 ## Overview
@@ -46,8 +49,13 @@ A container is a small, lightweight virtual machine (VM) that does not have devi
 
 * Services
     * Proxy
+<<<<<<< HEAD
         * minion
             * POD
+=======
+        * minion  
+            * POD 
+>>>>>>> 1457e7d1004b64f96e6d3d6b83e7187c6e4f40cb
                 * Container
                 * Container
             * POD
@@ -64,7 +72,7 @@ The "one-container-per-Pod" model is the most common Kubernetes use case; in thi
 A Pod can encapsulate an application composed of multiple co-located containers that are tightly coupled and need to share resources. These co-located containers form a single cohesive unit of service—for example, one container serving data stored in a shared volume to the public, while a separate sidecar container refreshes or updates those files. The Pod wraps these containers, storage resources, and an ephemeral network identity together as a single unit.
 
 
-## minion
+## Minion
  The minion is the node on which all the services run. You can have many minions running at one point in time.
 
  Each minion will host one or more POD. Each POD is like hosting a service. Each POD then contains the Docker containers.
@@ -86,6 +94,10 @@ A Pod can encapsulate an application composed of multiple co-located containers 
  * Kubelet − This is used to control the launching of containers via manifest files.
 
  * kube-proxy − This is used to provide network proxy services to the outside world.
+
+## Namespace
+In Kubernetes, namespaces provides a mechanism for isolating groups of resources within a single cluster. Names of resources need to be unique within a namespace, but not across namespaces. Namespace-based scoping is applicable only for namespaced objects (e.g. Deployments, Services, etc) and not for cluster-wide objects (e.g. StorageClass, Nodes, PersistentVolumes, etc).
+
 
 ## Benefits of Kubernetes
  Kubernetes enables users to schedule, run and monitor containers, typically in clustered configurations, and automate related operational tasks. These include:
@@ -133,25 +145,29 @@ $ kubectl apply -f .
 $ kubectl get po
 ```
 
+## Deploy Kubernetes Dashboard
+Kubernetes Dashboard is a general purpose, web-based UI for Kubernetes clusters. It allows users to manage applications running in the cluster and troubleshoot them, as well as manage the cluster itself.
+
+```
+$ minikube dashboard
+```
+> **IMPORTANT**
+> Read the [Access Control][AC] guide before performing any further steps. The default Dashboard deployment contains a minimal set of RBAC privileges needed to run.
 
 ## Courses
 * [Kubernetes | Techtarget](https://www.techtarget.com/searchitoperations/definition/Google-Kubernetes)
 * [Kubernetes | Simplilearn](https://www.simplilearn.com/tutorials/kubernetes-tutorial/what-is-kubernetes)
 * [Kubernetes | Youtube](https://www.youtube.com/watch?v=X48VuDVv0do&t=8770s)
 
-
 ## Going further
 ### Helm
 Helm helps to manage Kubernetes applications, Helm Charts help you define, install, and upgrade even the most complex Kubernetes application. For more information see this [website][website]
+* [Running ELK on Kubernetes with Helm](https://coralogix.com/blog/elasticsearch-logstash-kibana-on-kubernetes/)
 
 [KOUCF]:https://kubernetes.io/docs/tasks/manage-kubernetes-objects/imperative-config/#:~:text=Using%20Configuration%20Files-,Imperative%20Management%20of%20Kubernetes%20Objects%20Using%20Configuration%20Files,manage%20objects%20using%20configuration%20files.
-
 [API]:https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.24/#-strong-api-overview-strong-
-
 [kompose]:https://kompose.io/
-
 [ik]:https://kompose.io/installation/
-
 [website]:https://helm.sh/
-
 [info]:https://kubernetes.io/docs/concepts/workloads/pods/
+[AC]:https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/README.md
