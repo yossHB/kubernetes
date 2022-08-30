@@ -6,21 +6,23 @@ Get started with Docker Compose
 ## Contents
 
 1. [Overview](#Overview)
-   * [Definition](#Definition)
-   * [Container](#Container)
-   * [Microservice](#Microservice)
-   * [Why do You Need Kubernetes](#Why-do-You-Need-Kubernetes)
+    * [Definition](#Definition)
+    * [Container](#Container)
+    * [Microservice](#Microservice)
+    * [Why do You Need Kubernetes](#Why-do-You-Need-Kubernetes)
 1. [Kubernetes diagram](#Kubernetes-diagram)
+1. [Pod](#Pod)
+    * [Single container pod](#Single-container-pod)
+    * [Multi container pod](#Multi-container-pod)
 1. [Vocabulaire](#Vocabulaire)
 1. [Benefits of Kubernetes](#Benefits-of-Kubernetes)
 1. [Imperative Management of Kubernetes Objects](#Imperative-Management-of-Kubernetes-Objects)
 1. [Kubernetes API Reference](#Kubernetes-API-Reference)
 1. [Translate a Docker Compose File to Kubernetes Resources](#Translate-a-Docker-Compose-File-to-Kubernetes-Resources)
-1. [For courses](#For-courses)
-
+1. [Courses](#Courses)
 1. [Going further](#Going-further)
-   * [Docker Kubernetes Architecture](#Docker-Kubernetes-Architecture)
-
+    * [Docker Kubernetes Architecture](#Docker-Kubernetes-Architecture)
+    * [Helm](#Helm)
 
 
 
@@ -52,11 +54,21 @@ A container is a small, lightweight virtual machine (VM) that does not have devi
                 * Container
                 * Container
 
+## Pod
+A pod is a collection of containers and its storage inside a node of a Kubernetes cluster. It is possible to create a pod with multiple containers inside it. For more [information][info]
+
+There are two types of Pods:
+### Single container pod
+The "one-container-per-Pod" model is the most common Kubernetes use case; in this case, you can think of a Pod as a wrapper around a single container; Kubernetes manages Pods rather than managing the containers directly.
+### Multi container pod
+A Pod can encapsulate an application composed of multiple co-located containers that are tightly coupled and need to share resources. These co-located containers form a single cohesive unit of service—for example, one container serving data stored in a shared volume to the public, while a separate sidecar container refreshes or updates those files. The Pod wraps these containers, storage resources, and an ephemeral network identity together as a single unit.
+
+
 ## minion
- The minion is the node on which all the services run. You can have many minions running at one point in time. 
- 
- Each minion will host one or more POD. Each POD is like hosting a service. Each POD then contains the Docker containers. 
- 
+ The minion is the node on which all the services run. You can have many minions running at one point in time.
+
+ Each minion will host one or more POD. Each POD is like hosting a service. Each POD then contains the Docker containers.
+
  Each POD can host a different set of Docker containers. The proxy is then used to control the exposing of these services to the outside world.
 
  Kubernetes has several components in its architecture. The role of each component is explained below &mius;
@@ -108,6 +120,7 @@ Replication Controller. An abstract used to manage pod lifecycles.
 
 ### Install Kompose
  We have multiple ways to [install Kompose][ik].
+
 ### Use Kompose
 1. To convert the docker-compose.yml file to files that you can use with kubectl, run kompose convert and then kubectl apply -f <output file>.
 ```
@@ -121,19 +134,24 @@ $ kubectl get po
 ```
 
 
-
-
-## For courses
-* [Kubernetes | techtarget](https://www.techtarget.com/searchitoperations/definition/Google-Kubernetes)
-* [Kubernetes | simplilearn](https://www.simplilearn.com/tutorials/kubernetes-tutorial/what-is-kubernetes)
+## Courses
+* [Kubernetes | Techtarget](https://www.techtarget.com/searchitoperations/definition/Google-Kubernetes)
+* [Kubernetes | Simplilearn](https://www.simplilearn.com/tutorials/kubernetes-tutorial/what-is-kubernetes)
+* [Kubernetes | Youtube](https://www.youtube.com/watch?v=X48VuDVv0do&t=8770s)
 
 
 ## Going further
-
-
+### Helm
+Helm helps to manage Kubernetes applications, Helm Charts help you define, install, and upgrade even the most complex Kubernetes application. For more information see this [website][website]
 
 [KOUCF]:https://kubernetes.io/docs/tasks/manage-kubernetes-objects/imperative-config/#:~:text=Using%20Configuration%20Files-,Imperative%20Management%20of%20Kubernetes%20Objects%20Using%20Configuration%20Files,manage%20objects%20using%20configuration%20files.
+
 [API]:https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.24/#-strong-api-overview-strong-
+
 [kompose]:https://kompose.io/
+
 [ik]:https://kompose.io/installation/
 
+[website]:https://helm.sh/
+
+[info]:https://kubernetes.io/docs/concepts/workloads/pods/
