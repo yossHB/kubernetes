@@ -49,7 +49,6 @@ A container is a small, lightweight virtual machine (VM) that does not have devi
 
 * Services
     * Proxy
-<<<<<<< HEAD
         * minion
             * POD
         * minion
@@ -158,6 +157,8 @@ $ minikube dashboard
 * [Kubernetes | Youtube](https://www.youtube.com/watch?v=X48VuDVv0do&t=8770s)
 
 ## Going further
+### Docker Kubernetes Architecture
+* [Docker Kubernetes Architecture](https://www.tutorialspoint.com/docker/docker_kubernetes_architecture.htm#:~:text=Kubernetes%20is%20an%20orchestration%20framework,would%20contain%20nginx%20and%20redis.)
 ### Helm
 Helm helps to manage Kubernetes applications, Helm Charts help you define, install, and upgrade even the most complex Kubernetes application. For more information see this [website][website]
 * [Running ELK on Kubernetes with Helm](https://coralogix.com/blog/elasticsearch-logstash-kibana-on-kubernetes/)
