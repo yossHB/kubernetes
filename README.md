@@ -52,10 +52,8 @@ A container is a small, lightweight virtual machine (VM) that does not have devi
 <<<<<<< HEAD
         * minion
             * POD
-=======
-        * minion  
-            * POD 
->>>>>>> 1457e7d1004b64f96e6d3d6b83e7187c6e4f40cb
+        * minion
+            * POD
                 * Container
                 * Container
             * POD
